@@ -1,0 +1,1909 @@
+/* Resetting and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* Main Theme Colors */
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8f8f8;
+  --accent-bg: #222222;
+  
+  /* Text Colors */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-light: #ffffff;
+  --text-muted: #999999;
+  
+  /* Border Colors */
+  --border-color: #e5e5e5;
+  --border-hover: #cccccc;
+  
+  /* Interactive Elements */
+  --button-bg: #333333;
+  --button-hover: #444444;
+  --button-text: rgb(0, 0, 0);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  
+  /* Special Elements */
+  --card-bg: #ffffff;
+  --form-bg: #ffffff;
+  --input-bg: #f8f8f8;
+  --modal-bg: #ffffff;
+}
+
+/* Update all button styles for consistency */
+.submit-btn,
+.cta-button,
+.upload-link,
+.filter-btn {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover,
+.cta-button:hover,
+.upload-link:hover,
+.filter-btn:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* Update form elements */
+input,
+textarea,
+select {
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+}
+
+/* Update card styles */
+.memory-item,
+.confession-item,
+.memory-mini-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Update headers */
+.section-header h2 {
+  color: var(--text-primary);
+}
+
+.section-header p {
+  color: var(--text-secondary);
+}
+
+/* Update form containers */
+.memory-form,
+.confession-form-container {
+  background: var(--form-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Update modal styles */
+.modal-content {
+  background: var(--card-bg);
+  max-width: 90%;
+  width: 800px;
+  border-radius: 16px;
+  position: relative;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Update text styles for special elements */
+.confession-to,
+.memory-caption {
+  font-family: "Reenie Beanie", cursive;
+  color: var(--text-primary);
+}
+
+.confession-text,
+.memory-text {
+  font-family: "Reenie Beanie", cursive;
+  color: var(--text-secondary);
+}
+
+/* Update date and meta information */
+.confession-date,
+.memory-date,
+.memory-location {
+  color: var(--text-muted);
+}
+
+/* Update navigation */
+.nav-link {
+  color: var(--text-primary);
+}
+
+.nav-link:hover {
+  color: var(--button-bg);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 16px;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7; /* Increased line height for better readability */
+}
+
+h1, h2, h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+p {
+    font-family: "Inter Tight", sans-serif;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem; /* Slightly larger paragraph text */
+}
+
+/* Header & Navigation */
+.main-header {
+    font-family: "Inter Tight", sans-serif;
+    background: rgba(240, 234, 214, 0.95); /* Beige with transparency */
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    font-family: "Inter Tight", sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Inter Tight", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo i {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 2rem;
+    color: #3b82f6;
+}
+
+.logo h1 {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    font-family: "Inter Tight", sans-serif;
+    color: #3b82f6;
+}
+
+.nav-menu {
+    font-family: "Inter Tight", sans-serif;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    font-family: "Inter Tight", sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    font-family: "Inter Tight", sans-serif;
+    color: var(--primary-color);
+}
+
+.upload-link {
+    font-family: "Inter Tight", sans-serif;
+    background: var(--accent-color); /* Wood Brown */
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.upload-link:hover {
+    font-family: "Inter Tight", sans-serif;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    font-family: "Inter Tight", sans-serif;
+    position: relative;
+    height: 100vh;
+    background: url('images/camping-bg.jpg') no-repeat center center; /* Replace with a camping background */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    font-family: "Inter Tight", sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.6) /* Darker overlay for better text visibility */
+    );
+}
+
+.hero-content {
+    font-family: "Inter Tight", sans-serif;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero-logos {
+    font-family: "Inter Tight", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-logos img {
+    font-family: "Inter Tight", sans-serif;
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.hero-section h1 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Stronger shadow */
+}
+
+.hero-section h2 {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    color: #fdd835; /* Gold/Yellow for campfire feel */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Stronger shadow */
+}
+
+.hero-section p {
+    font-family: "Inter Tight", sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    font-family: "Inter Tight", sans-serif;
+    background: #fdd835; /* Gold/Yellow */
+    color: #333; /* Dark text */
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* Stronger shadow */
+}
+
+.cta-button:hover {
+    font-family: "Inter Tight", sans-serif;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #fff;
+}
+
+/* Enhanced Section Styling */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle gradient overlays */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(180deg, 
+        rgba(255,255,255,0.05) 0%, 
+        rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+/* Gallery Section Enhancement */
+.gallery-section {
+    background: linear-gradient(to bottom, 
+        rgba(245,245,245,0.8) 0%,
+        rgba(255,255,255,1) 100%);
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.03);
+}
+
+/* Upload Section Enhancement */
+.upload-section {
+    position: relative;
+}
+
+.upload-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Slideshow Section Enhancement */
+.slideshow-section {
+    background: linear-gradient(45deg, 
+        rgba(248,248,248,1) 0%,
+        rgba(252,252,252,1) 100%);
+    box-shadow: 
+        inset 0 20px 20px -20px rgba(0,0,0,0.05),
+        inset 0 -20px 20px -20px rgba(0,0,0,0.05);
+}
+
+/* Confession Section Enhancement */
+.confession-section {
+    background: linear-gradient(180deg, 
+        rgba(250,250,250,1) 0%,
+        rgba(255,255,255,1) 50%,
+        rgba(250,250,250,1) 100%);
+}
+
+.confession-marquee-container {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 24px rgba(0,0,0,0.08),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
+}
+
+.confession-form-container {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.08),
+        inset 0 0 0 1px rgba(255,255,255,0.5);
+}
+
+/* Section Headers Enhancement */
+.section-header {
+    position: relative;
+    z-index: 2;
+}
+
+.section-header h2 {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section-header p {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* Memory Items Enhancement */
+.memory-item {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 4px 20px rgba(0,0,0,0.08),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 28px rgba(0,0,0,0.12),
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+/* Form Elements Enhancement */
+input, textarea {
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.02),
+        0 0 0 1px rgba(255,255,255,0.6);
+}
+
+/* Button Enhancement */
+.submit-btn, .cta-button {
+    backdrop-filter: blur(4px);
+    background: linear-gradient(135deg, 
+        rgba(51,51,51,0.95) 0%,
+        rgba(34,34,34,0.95) 100%);
+    box-shadow: 
+        0 4px 12px rgba(0,0,0,0.15),
+        inset 0 1px 1px rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover, .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 16px rgba(0,0,0,0.2),
+        inset 0 1px 1px rgba(255,255,255,0.2);
+}
+
+/* Gallery Section */
+.section-header {
+    font-family: "Inter Tight", sans-serif;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.section-header h2 {
+    font-family: "Reenie Beanie", cursive;
+    font-size: 4rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+
+}
+
+.section-header p {
+    font-family: "Inter Tight", sans-serif;
+    color: #64748b;
+}
+
+.year-filter {
+    font-family: "Inter Tight", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    font-family: "Inter Tight", sans-serif;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--primary-color); /* Forest Green */
+    border-radius: 25px;
+    background: transparent;
+    color: var(--primary-color); /* Forest Green */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    font-family: "Inter Tight", sans-serif;
+    background: var(--primary-color); /* Forest Green */
+    color: var(--white);
+}
+
+/* Photo Grid and Memory Items */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 2.5rem;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust as needed */
+    align-items: stretch;
+}
+
+.memory-item {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.memory-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.memory-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.memory-content img,
+.memory-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.memory-item:hover .memory-content img,
+.memory-item:hover .memory-content video {
+    transform: scale(1.05);
+}
+
+/* Download Button */
+.download-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.memory-item:hover .download-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.download-btn:hover {
+    background: var(--button-bg);
+    color: var(--text-light);
+}
+
+/* Memory Info Section */
+.memory-info {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.memory-caption {
+    font-family: "Reenie Beanie", cursive;
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Meta Information */
+.memory-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.memory-location,
+.memory-date,
+.memory-year {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.memory-location i,
+.memory-date i {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .photo-grid {
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .memory-caption {
+        font-size: 1.75rem;
+    }
+
+    .memory-content {
+        aspect-ratio: 16/10;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photo-grid {
+        padding: 0.75rem;
+        gap: 1.25rem;
+    }
+
+    .memory-info {
+        padding: 1.25rem;
+    }
+
+    .memory-caption {
+        font-size: 1.5rem;
+    }
+
+    .memory-meta {
+        gap: 0.75rem;
+    }
+
+    .download-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+
+/* Upload Form */
+.memory-form {
+    font-family: "Inter Tight", sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+.form-group {
+    font-family: "Inter Tight", sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-family: "Inter Tight", sans-serif;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4b5563; /* Darker label text */
+}
+
+.form-group input,
+.form-group select {
+    font-family: "Inter Tight", sans-serif;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; /* Lighter border color */
+    border-radius: 6px; /* Smaller border radius */
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    font-family: "Inter Tight", sans-serif;
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.file-upload {
+    font-family: "Inter Tight", sans-serif;
+    position: relative;
+}
+
+.file-upload input[type="file"] {
+    font-family: "Inter Tight", sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-label {
+    font-family: "Inter Tight", sans-serif;
+    display: block;
+    padding: 15px;
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-label:hover {
+    font-family: "Inter Tight", sans-serif;
+    background: #eee;
+    border-color: #999;
+}
+
+.submit-btn {
+    font-family: "Inter Tight", sans-serif;
+    width: 100%;
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    background: var(--accent-color); /* Wood Brown */
+    color: var(--white);
+    border: none;
+    border-radius: 30px; /* More rounded buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    font-family: "Inter Tight", sans-serif;
+    background: #e11d48;
+}
+
+/* Progress Bar */
+.progress-bar {
+    font-family: "Inter Tight", sans-serif;
+    width: 0%;
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+    margin-top: 1rem;
+    transition: width 0.3s ease;
+}
+
+/* Footer */
+footer {
+    font-family: "Inter Tight", sans-serif;
+    background: var(--text-color); /* Dark Brown */
+    color: var(--white);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    font-family: "Inter Tight", sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.footer-section h3 {
+    font-family: "Inter Tight", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    font-family: "Inter Tight", sans-serif;
+    list-style: none;
+}
+
+.footer-section ul li {
+    font-family: "Inter Tight", sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    font-family: "Inter Tight", sans-serif;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    font-family: "Inter Tight", sans-serif;
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    font-family: "Inter Tight", sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom i {
+    font-family: "Inter Tight", sans-serif;
+    color: var(--accent-color); /* Wood Brown */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    font-family: "Inter Tight", sans-serif;
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notification Styles */
+.notification {
+    font-family: "Inter Tight", sans-serif;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    font-family: "Inter Tight", sans-serif;
+    transform: translateX(0);
+}
+
+.notification.success {
+    font-family: "Inter Tight", sans-serif;
+    background: #22c55e;
+}
+
+.notification.error {
+    font-family: "Inter Tight", sans-serif;
+    background: #ef4444;
+}
+
+.notification.info {
+    font-family: "Inter Tight", sans-serif;
+    background: #3b82f6;
+}
+
+.memory-modal {
+    font-family: "Inter Tight", sans-serif;
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(30,41,59,0.85); display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+}
+.modal-content {
+    font-family: "Inter Tight", sans-serif;
+    background: #fff; border-radius: 18px; padding: 2rem; max-width: 500px; width: 90vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    position: relative;
+    animation: fadeIn 0.4s;
+}
+.close-modal {
+    font-family: "Inter Tight", sans-serif;
+    position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: #2d6a4f; cursor: pointer;
+}
+
+.section-divider svg { font-family: "Inter Tight", sans-serif; display: block; width: 100%; height: 60px; }
+
+.memory-of-day {
+    font-family: "Inter Tight", sans-serif;
+    margin: 1.5rem auto 0 auto;
+    max-width: 400px;
+    background: #fffbe7;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(251,191,36,0.13);
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #b45309;
+    font-size: 1.1rem;
+}
+
+.reactions {
+    font-family: "Inter Tight", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+}
+
+.reaction {
+    font-family: "Inter Tight", sans-serif;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem; /* Increased size for better visibility */
+    color: #666;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.reaction:hover {
+    font-family: "Inter Tight", sans-serif;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.reaction i {
+    font-family: "Inter Tight", sans-serif;
+    margin-right: 0.25rem;
+}
+
+.inspiring-quote {
+    font-family: "Inter Tight", sans-serif;
+    text-align: center;
+    font-style: italic;
+    color: #64748b;
+    margin: 2rem 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.memory-info {
+    font-family: "Inter Tight", sans-serif;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#upload-progress {
+    font-family: "Inter Tight", sans-serif;
+    width: 0%;
+    height: 4px;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+/* Slideshow Section */
+.slideshow-section {
+    font-family: "Inter Tight", sans-serif;
+    text-align: center;
+    padding: 2rem;
+    background: var(--secondary-color);
+    margin-top: 2rem;
+}
+
+.swiper {
+    font-family: "Inter Tight", sans-serif;
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    font-family: "Inter Tight", sans-serif;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Required for fade effect */
+}
+
+.swiper-slide img,
+.swiper-slide video {
+    font-family: "Inter Tight", sans-serif;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.motivational-message {
+    font-family: "Inter Tight", sans-serif;
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+.memory-location,
+.memory-date {
+    font-family: "Inter Tight", sans-serif;
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.25rem;
+}
+
+.memory-location i,
+.memory-date i {
+    font-family: "Font Awesome 6 Free";
+    margin-right: 0.25rem;
+}
+
+/* Responsive Grid Layout */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Sliding Memories Section */
+.sliding-memories {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+    background: #f8f8f8;
+    position: relative;
+}
+
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.blur-overlay.left {
+    left: 0;
+    background: linear-gradient(to right, #f8f8f8 40%, transparent);
+}
+
+.blur-overlay.right {
+    right: 0;
+    background: linear-gradient(to left, #f8f8f8 40%, transparent);
+}
+
+.marquee-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 50px;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.marquee-track.left {
+    animation: slideLeft 20s linear infinite;
+}
+
+.marquee-track.right {
+    animation: slideRight 20s linear infinite;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    flex-shrink: 0;
+}
+
+.memory-mini-card {
+    width: 280px;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    background: white;
+}
+
+.mini-card-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Add specific styles for video elements */
+.mini-card-media[autoplay] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none; /* Prevents video controls from showing */
+}
+
+@keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes slideRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Optimize performance */
+.marquee-track {
+    will-change: transform;
+}
+
+/* Pause on hover */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Center Message Styles */
+.central-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.message-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+}
+
+#motivational-text {
+    font-family: "Reenie Beanie", cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+    animation: floating 3s ease-in-out infinite;
+    text-align: center;
+    text-decoration: wavy;
+}
+
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+    content: "✨";
+    position: absolute;
+    animation: sparkle 2s linear infinite;
+    font-size: 1.5rem;
+}
+
+.sparkles::before {
+    left: 10%;
+    animation-delay: 0.5s;
+}
+
+.sparkles::after {
+    right: 10%;
+    animation-delay: 1s;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.5);
+    }
+}
+
+/* Adjust existing marquee tracks to make space for center message */
+.marquee-track.left,
+.marquee-track.right {
+    opacity: 0.8;
+    filter: blur(1px);
+    transition: all 0.3s ease;
+}
+
+.marquee-track:hover {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Confessions Section Container */
+.confession-section {
+  padding: 2rem 50px;
+  background: var(--confession-bg);
+  margin-top: 2rem;
+}
+
+.section-header h2 {
+  color: var(--confession-text);
+  font-size: 2.5rem;
+}
+
+.section-header p {
+  color: var(--confession-muted);
+}
+
+/* Two-column layout; center content and balance spacing */
+.confession-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Left Column: Auto-scrolling Confession Cards */
+.confession-marquee-container {
+  position: relative;
+  overflow: hidden;
+  background: var(--confession-card-bg);
+  border: 1px solid var(--confession-border);
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.confession-marquee {
+  display: flex;
+  flex-direction: column;
+  animation: verticalScroll 20s linear infinite;
+}
+
+/* Confession Cards */
+.confession-item {
+  background: var(--confession-bg);
+  border: 1px solid var(--confession-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.confession-to {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.4rem;
+  color: var(--confession-accent);
+  margin-bottom: 0.5rem;
+}
+
+.confession-text {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 1.2rem;
+  color: var(--confession-text);
+}
+
+.confession-date {
+  font-size: 0.85rem;
+  color: var(--confession-muted);
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+/* Right Column: Form */
+.confession-form-container {
+  background: var(--confession-card-bg);
+  border: 1px solid var(--confession-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#confession-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#confession-form label {
+  color: var(--confession-text);
+  font-weight: bold;
+}
+
+#confession-form input,
+#confession-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--confession-bg);
+  border: 1px solid var(--confession-border);
+  border-radius: 6px;
+  color: var(--confession-text);
+  font-size: 1rem;
+}
+
+#confession-form input::placeholder,
+#confession-form textarea::placeholder {
+  color: var(--confession-muted);
+}
+
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--confession-accent);
+  color: rgb(11, 11, 11);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-color: #161414;
+}
+
+.submit-btn:hover {
+color: #fff;
+  background: #1f4b3e;
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes verticalScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .confession-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .confession-marquee-container,
+  .confession-form-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .memory-item {
+        margin-bottom: 1rem;
+    }
+
+    .memory-caption {
+        font-size: 1.5rem;
+    }
+
+    .memory-info {
+        padding: 1rem;
+    }
+
+    .memory-location,
+    .memory-date {
+        font-size: 0.85rem;
+    }
+
+    .download-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section Responsiveness */
+    .hero-section {
+        height: 80vh;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .hero-logos {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-logos img {
+        width: 60px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .upload-section {
+        padding: 1rem;
+        margin-top: 60px; /* Account for fixed header */
+    }
+
+    .memory-form {
+        max-width: 100%;
+        padding: 1.5rem;
+        margin: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .file-upload {
+        margin-bottom: 1.5rem;
+    }
+
+    .file-label {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    #file-name {
+        word-break: break-word;
+    }
+
+    .submit-btn {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photo-grid {
+        padding: 0.75rem;
+        gap: 1rem;
+    }
+
+    .memory-caption {
+        font-size: 1.3rem;
+    }
+
+    .memory-content {
+        aspect-ratio: 4/3;
+    }
+
+    .memory-info {
+        padding: 0.75rem;
+    }
+
+    .download-btn {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-header p {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section Responsiveness */
+    .hero-section {
+        height: 70vh;
+    }
+
+    .hero-logos {
+        gap: 0.75rem;
+    }
+
+    .hero-logos img {
+        width: 50px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-section p {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.75rem;
+        font-size: 0.95rem;
+    }
+
+    .upload-section {
+        padding: 0.75rem;
+        margin-top: 50px;
+    }
+
+    .memory-form {
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        border-radius: 4px;
+    }
+
+    .file-label {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+        border-width: 1px;
+    }
+
+    .submit-btn {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+        border-radius: 25px;
+    }
+
+    #upload-progress {
+        height: 3px;
+        margin: 8px 0;
+    }
+}
+
+/* Modal Responsiveness */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .close-modal {
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    #modal-caption {
+        font-size: 1.2rem;
+    }
+
+    #modal-meta {
+        font-size: 0.9rem;
+    }
+}
+
+/* Navigation Responsiveness */
+@media screen and (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .nav-links {
+        margin-top: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Form Responsiveness */
+@media screen and (max-width: 768px) {
+    .memory-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .file-label {
+        padding: 0.75rem;
+    }
+
+    .submit-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Header/Navigation Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-header {
+        padding: 0.75rem 1rem;
+    }
+
+    nav {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .logo i {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-header {
+        padding: 0.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .upload-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Section Headers Responsiveness */
+@media screen and (max-width: 768px) {
+    .section-header {
+        margin: 2rem 0;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-header {
+        margin: 1.5rem 0;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .section-header p {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    max-width: 90%;
+    width: 800px;
+    border-radius: 16px;
+    position: relative;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+#modal-media {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#modal-media img,
+#modal-media video {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+}
+
+#modal-caption {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: "Reenie Beanie", cursive;
+}
+
+#modal-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+#modal-meta p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#modal-meta i {
+    color: var(--text-muted);
+}
+
+.close-modal {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 36px;
+    height: 36px;
+    background: var(--button-bg);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: var(--button-hover);
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    #modal-caption {
+        font-size: 1.25rem;
+    }
+    
+    #modal-meta {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    width: 98%;
+    padding: 0.75rem;
+  }
+
+  .close-modal {
+    top: -12px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.25rem;
+  }
+
+  #modal-caption {
+    font-size: 1.1rem;
+  }
+
+  #modal-meta p {
+    font-size: 0.9rem;
+  }
+}

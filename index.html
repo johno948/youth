@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evangelistic Camp Meeting Memories</title>
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Reenie+Beanie&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDKs -->
+    <script defer src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logos">
+                <img src="images/logo1.png" alt="Ministry Logo" class="ministry-logo">
+                <img src="images/logo2.png" alt="College Logo" class="college-logo">
+                <img src="images/logo3.png" alt="Youth Logo" class="youth-logo">
+            </div>
+            <h1>Mountain View College</h1>
+            <h2>Evangelistic Camp Meeting</h2>
+            <p>Creating memories, sharing faith, building fellowship</p>
+            <a href="#gallery" class="cta-button">View Our Memories</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <h2>Youth Camp Memories</h2>
+                <p>Browse through our collection of precious moments</p>
+            </div>
+</div>
+            <div class="photo-grid">
+                <div class="memory-item skeleton"></div>
+                <div class="memory-item skeleton"></div>
+                <div class="memory-item skeleton"></div>
+            </div>
+        </section>
+        
+<section id="upload" class="upload-section">
+    <div class="section-header">
+        <h2><i class="fas fa-share-alt"></i> Share Your Memories</h2>
+        <p>Add your special moments to our collection</p>
+    </div>
+    <div class="upload-card">
+        <form id="upload-form" class="memory-form">
+            <div class="form-group file-upload">
+                <label for="file-input" class="file-label">
+                    <span id="file-name">Click to upload photo or video</span>
+                </label>
+                <input type="file" id="file-input" accept="image/*,video/*" required>
+            </div>
+            <div class="form-group">
+                <label for="caption">
+                    Tell Us About This Memory (Optional)
+                </label>
+                <input type="text" id="caption"
+                       placeholder="Share the story behind this moment...">
+            </div>
+            <div class="form-group">
+                <label for="location">Location (Optional):</label>
+                <input type="text" id="location" placeholder="Enter location">
+            </div>
+            <div class="form-group">
+                <label for="memory-date">Date</label>
+                <input type="date" 
+                       id="memory-date" 
+                       name="memory-date" 
+                       min="2025-01-01" 
+                       max="2025-12-31" 
+                       value="2025-01-01" 
+                       required>
+            </div>
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-heart"></i> Share This Memory
+            </button>
+        </form>
+        <div id="upload-progress" class="progress-bar"></div>
+    </div>
+</section>
+
+        <section id="slideshow-section" class="slideshow-section">
+            <div class="section-header">
+                <h2>Memories Slideshow</h2>
+                <p>Enjoy a slideshow of our shared memories</p>
+            </div>
+        </section>
+        
+        <section class="sliding-memories">
+    <div class="blur-overlay left"></div>
+    <div class="blur-overlay right"></div>
+    
+    <div class="marquee-container">
+        <!-- Left-moving track -->
+        <div class="marquee-track left">
+            <div class="marquee-content"></div> <!-- Duplicate for seamless loop -->
+        </div>
+                    <div class="motivational-message">
+                <p id="motivational-text">"Loading motivational message..."</p>
+            </div>
+        <!-- Right-moving track -->
+        <div class="marquee-track right">
+            <div class="marquee-content"></div> <!-- Duplicate for seamless loop -->
+        </div>
+    </div>
+</section>
+
+<section id="confessions" class="confession-section">
+  <div class="section-header">
+    <h2>Confessions</h2>
+    <p>Share your thoughts and confessions with our community</p>
+  </div>
+  <div class="confession-wrapper">
+    <!-- Left Column: Auto-scrolling Confession Cards -->
+    <div class="confession-marquee-container">
+      <div class="confession-marquee" id="confession-marquee">
+        <!-- Confession cards will be dynamically inserted and duplicated here -->
+      </div>
+    </div>
+    <!-- Right Column: Submission Form -->
+    <div class="confession-form-container">
+      <form id="confession-form">
+        <label for="confession-to">To:</label>
+        <input type="text" id="confession-to" placeholder="Enter recipient's name" required>
+        <label for="confession-message">Message:</label>
+        <textarea id="confession-message" placeholder="What's on your mind?..." required></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-church"></i> Youth Camp Memories</h3>
+                <p>Preserving precious moments of faith and fellowship</p>
+            </div>
+            <div class="footer-section">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Evangelistic Camp Meeting | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Memory Info Template (Hidden) -->
+    <div id="memory-info-template" class="memory-info" style="display:none;">
+        <div class="memory-header">
+            <span class="close-btn" title="Close this memory"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="memory-content">
+            <div class="memory-media"></div>
+            <div class="memory-details">
+                <h3 class="memory-title"></h3>
+                <p class="memory-caption"></p>
+                <span class="memory-year"></span>
+                <span class="like-btn" title="Like this memory">
+                    <i class="fas fa-heart"></i> <span class="like-count">${memory.likes || 0}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Modal (Hidden) -->
+    <div id="memory-modal" class="memory-modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-media"></div>
+        <div id="modal-caption"></div>
+        <div id="modal-meta"></div>
+      </div>
+    </div>
+    <div class="inspiring-quote" id="inspiring-quote"></div>
+</body>
+</html>
