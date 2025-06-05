@@ -1,5 +1,5 @@
 // GitHub configuration - Store this in environment variables in production!
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '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';
 const GITHUB_REPO = 'johno948/evangelistic_camp';
 const GITHUB_BRANCH = 'main';
 
